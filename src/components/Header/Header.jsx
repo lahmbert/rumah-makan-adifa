@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink, Link } from 'react-router-dom'
 import { Container } from 'reactstrap'
 
-import logo from '../../logo.svg'
+import logo from '../../logo2.png'
 import './header.css'
 
 const nav__link = [
@@ -31,14 +31,14 @@ const Header = () => {
         <div className=' d-flex align-items-center justify-content-between' >
           <div className="logo">
             <img src={logo} alt="logo" className='' />
-            <h5>Loundry QU</h5>
+            <h5>Loundry <span>QU</span></h5>
           </div>
 
           <div className="navigation">
             <div className="menu d-flex align-items-center gap-5">
               {
                 nav__link.map((item, index) => (
-                  <NavLink to={item.path} key={index} >{item.display}</NavLink>
+                  <NavLink to={item.path} key={index} className={navClass => navClass.isActive ? 'active__menu' : ''} >{item.display}</NavLink>
                 ))
               }
             </div>

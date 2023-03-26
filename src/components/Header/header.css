@@ -1,10 +1,34 @@
 .logo img {
     width: 100px;
-    height: 100px;
+    height: 60px;
     margin-bottom: 0;
 }
 
 .logo h5 {
     font-weight: 600;
     margin-top: 0;
+}
+
+.logo h5 span {
+    color: #df2020;
+}
+
+.menu a {
+    font-weight: 600;
+    color: #212245;
+    font-size: 1rem;
+    cursor: pointer;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.menu a:hover {
+    color: #df2020;
+}
+
+.active__menu {
+    color: #df2020 !important;
+}
+
+.user i {
+    color: #212245;
 }
