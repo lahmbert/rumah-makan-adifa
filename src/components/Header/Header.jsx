@@ -44,7 +44,7 @@ const Header = () => {
             </div>
           </div>
 
-          <div className="nav__right d-flex align-items-center gap-2">
+          <div className="nav__right d-flex align-items-center gap-3">
             <span className="cart__icon">
               <i className="ri-shopping-bag-line"></i>
               <span className="cart__badge">2</span>
