@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NavLink, Link } from 'react-router-dom'
 import { Container } from 'reactstrap'
 
@@ -24,7 +24,11 @@ const nav__link = [
   },
 ]
 
+// const [toogle,setToogle] = useState(false)
+
 const Header = () => {
+
+
   return (
     <div className='header'>
       <Container>
@@ -34,7 +38,7 @@ const Header = () => {
             <h5>Loundry <span>QU</span></h5>
           </div>
 
-          <div className="navigation">
+          <div className="navigation" >
             <div className="menu d-flex align-items-center gap-5">
               {
                 nav__link.map((item, index) => (
@@ -56,7 +60,7 @@ const Header = () => {
               </Link>
             </span>
 
-            <span className="mobile__menu">
+            <span className="mobile__menu" /*onClick={()=> setToogle(!toogle)}*/ >
               <i className="ri-menu-line"></i>
             </span>
           </div>
