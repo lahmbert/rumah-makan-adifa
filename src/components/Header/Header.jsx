@@ -1,78 +1,69 @@
 import React from 'react'
-
-import Logo from '../../assets/images/logo512.png'
-import { Container } from 'reactstrap'
 import { NavLink, Link } from 'react-router-dom'
+import { Container } from 'reactstrap'
 
-import '../../styles/header.css'
+import logo from '../../logo.svg'
+import './header.css'
 
 const nav__link = [
   {
     display: 'Home',
     path: '/home'
-
   },
   {
-    display: 'Foods',
-    path: '/foods'
-
+    display: 'Service',
+    path: '/product'
   },
   {
     display: 'Cart',
     path: '/cart'
-
   },
   {
     display: 'Contact',
     path: '/contact'
-
   },
 ]
 
 const Header = () => {
+  return (
+    <div className='header'>
+      <Container>
+        <div className=' d-flex align-items-center justify-content-between' >
+          <div className="logo">
+            <img src={logo} alt="logo" className='' />
+            <h5>Loundry QU</h5>
+          </div>
 
-  
-  return <header className='header'>
-    <Container>
-      <div className="nav__wrapper d-flex align-items-center justify-content-between">
-        <div className="logo">
-          <img src={Logo} alt="logo" className='w-25' />
-          <h5>Warung <span>Adifa</span></h5>
-        </div>
+          <div className="navigation">
+            <div className="menu d-flex align-items-center gap-5">
+              {
+                nav__link.map((item, index) => (
+                  <NavLink to={item.path} key={index} >{item.display}</NavLink>
+                ))
+              }
+            </div>
+          </div>
 
-        {/*====== Menu ====== */}
-        <div className="navigation">
-          <div className="menu d-flex align-items-center gap-5">
-            {
-              nav__link.map((item,index) => (
-                <NavLink to={item.path} key={index} className={navClass => navClass.isActive ? 'active__menu' : ''} >
-                  {item.display}
-                </NavLink>
-              ))
-            }
+          <div className="nav__right d-flex align-items-center gap-2">
+            <span className="cart__icon">
+              <i className="ri-shopping-bag-line"></i>
+              <span className="cart__badge">2</span>
+            </span>
+
+            <span className="user">
+              <Link to='/login' >
+                <i className="ri-user-3-line"></i>
+              </Link>
+            </span>
+
+            <span className="mobile__menu">
+              <i className="ri-menu-line"></i>
+            </span>
           </div>
         </div>
-
-        {/*======= Right Icon ========= */}
-        <div className="nav__right d-flex align-items-center gap-4">
-          <span className="cart__icon">
-          <i className="ri-shopping-bag-line"></i>
-          <span className="cart__badge">2</span>
-          </span>
-
-          <span className="user">
-            <Link to='/login'><i className="ri-user-3-line"></i></Link>
-          </span>
-
-          <span className="mobile__menu">
-          <i className="ri-menu-line"></i>
-          </span>
-        </div>
-
-
-      </div>
-    </Container>
-  </header>
+      </Container>
+    </div>
+  )
 }
 
 export default Header
